@@ -1,0 +1,57 @@
+package Main.Token.SubTokens;
+
+public enum SubTokens {
+    TOK_QUOTE,
+    TOK_SETQ,
+    TOK_FUNC,
+    TOK_LAMBDA,
+    TOK_PROG,
+    TOK_COND,
+    TOK_WHILE,
+    TOK_RETURN,
+    TOK_BREAK,
+
+    TOK_PLUS,
+    TOK_MINUS,
+    TOK_TIMES,
+    TOK_DIVIDE,
+
+    TOK_HEAD,
+    TOK_TAIL,
+    TOK_CONS,
+
+    TOK_EQUAL,
+    TOK_NONEQUAL,
+    TOK_LESS,
+    TOK_LESSEQ,
+    TOK_GREATER,
+    TOK_GREATEREQ,
+
+    TOK_ISINT,
+    TOK_ISREAL,
+    TOK_ISBOOL,
+    TOK_ISNULL,
+    TOK_ISATOM,
+    TOK_ISLIST,
+
+    TOK_AND,
+    TOK_OR,
+    TOK_XOR,
+    TOK_NOT,
+
+    TOK_EVAL,
+
+    TOK_IDENTIFIER,
+
+    TOK_INTEGER_LITERAL,
+    TOK_REAL_LITERAL,
+    TOK_TRUE_LITERAL,
+    TOK_FALSE_LITERAL,
+    TOK_NULL_LITERAL,
+
+    TOK_OPEN_BRACKET,
+    TOK_CLOSE_BRACKET,
+
+    TOK_SPACE_DELIMETER,
+    TOK_LINE_DELIMETER,
+}
