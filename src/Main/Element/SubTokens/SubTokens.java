@@ -1,7 +1,8 @@
-package Main.Token.SubTokens;
+package Main.Element.SubTokens;
 
 public enum SubTokens {
     TOK_QUOTE,
+    TOK_QUOTE_SIGN,
     TOK_SETQ,
     TOK_FUNC,
     TOK_LAMBDA,
@@ -45,8 +46,7 @@ public enum SubTokens {
 
     TOK_INTEGER_LITERAL,
     TOK_REAL_LITERAL,
-    TOK_TRUE_LITERAL,
-    TOK_FALSE_LITERAL,
+    TOK_BOOLEAN_LITERAL,
     TOK_NULL_LITERAL,
 
     TOK_OPEN_BRACKET,
@@ -54,4 +54,6 @@ public enum SubTokens {
 
     TOK_SPACE_DELIMETER,
     TOK_LINE_DELIMETER,
+
+    TOK_INVALID,
 }

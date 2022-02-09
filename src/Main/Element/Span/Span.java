@@ -1,4 +1,4 @@
-package Main.Token.Span;
+package Main.Element.Span;
 
 public class Span {
     private int lineNum;

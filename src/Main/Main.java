@@ -1,28 +1,20 @@
 package Main;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 
-import Main.LexicalAnalysis.LexicalAnalysis;
-import Main.Token.Token;
+import Main.Types.*;
+import Main.parser.Parser;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("Input the name of .f file (like 'Name.f') or press Enter to watch a sample file: ");
-        Scanner in = new Scanner(System.in);
-        Path pathToFile = Paths.get(in.nextLine());
-		in.close();
-	
-		LexicalAnalysis la = new LexicalAnalysis(pathToFile);
-		ArrayList<Token> tokens = la.tokenize();
+        ElementsList ast = Parser.buildAST("/Users/timurbl/inno/FropInterpreter/src/tests/frop.f");
 
-		for (Token token : tokens) {
-			System.out.println(
-				token
-			);
-		}
+        PrintWriter writer = new PrintWriter("AST.json", StandardCharsets.UTF_8);
+        writer.print(ast);
+        writer.close();
+
+        System.out.println("AST tree was built successfully. Please, check file 'FropInterpreter/AST.json'");
     }
 }

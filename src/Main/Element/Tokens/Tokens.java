@@ -1,4 +1,4 @@
-package Main.Token.Tokens;
+package Main.Element.Tokens;
 
 public enum Tokens {
     DELIMETER,
@@ -12,4 +12,6 @@ public enum Tokens {
     LIST_BRACKET,
 
     LITERAL,
+
+    INVALID,
 }
