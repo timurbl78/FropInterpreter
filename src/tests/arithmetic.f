@@ -1,0 +1,5 @@
+(plus 1 2)
+(plus 1 (plus 1 2))
+(minus (minus 2 1) (plus 3 0))
+(divide (plus 1 (minus 3 4)) (minus 1 1))
+(divide (times 3 4) (times (plus 3 4) (minus (times 1 2) 3)))

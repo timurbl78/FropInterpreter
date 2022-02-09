@@ -1,0 +1,6 @@
+(isint 4)
+(isreal 20)
+(isboolean true)
+(isnull false)
+(islist (1 2))
+(isatom k)
