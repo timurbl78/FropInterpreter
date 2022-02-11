@@ -83,3 +83,19 @@ public class Span {
 <img width="339" alt="image" src="https://user-images.githubusercontent.com/69860125/153572931-6962a017-da9b-430d-9941-2446d8bb6508.png">
 
 
+## Syntax Analyzer
+
+<img width="443" alt="image" src="https://user-images.githubusercontent.com/69860125/153606722-1bc5718e-87d2-4904-88e0-6fa6f21c623d.png">
+
+For automated parser generation we used Bison.
+
+**Implementation technique:** Bottom-up parsing – from source tokens to grammar rules; the algorithm tries to reduce token sequences to more common non-terminal grammar symbols.
+
+<img width="854" alt="image" src="https://user-images.githubusercontent.com/69860125/153608201-112b4329-ea9d-4c27-81c1-0dc9d49ac44f.png">
+
+**The Result of Syntax Analysis:**
+
+<img width="483" alt="image" src="https://user-images.githubusercontent.com/69860125/153606843-a5ab460f-33a3-4991-bc84-fcb058ba4dfc.png">
+
+
+
