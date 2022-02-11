@@ -79,6 +79,7 @@ public class Span {
 ```
 
 The result of the Lexical analysis:
+
 <img width="339" alt="image" src="https://user-images.githubusercontent.com/69860125/153572931-6962a017-da9b-430d-9941-2446d8bb6508.png">
 
 
