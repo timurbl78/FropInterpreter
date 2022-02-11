@@ -3,4 +3,4 @@
     (isnull l) (quote ())
     (cons (f (car l)) (map f (cdr l))))))
 
-(map (lambda (n) (times n n)) '(1 2 3 4)) 
+(map (lambda (n) (times n n)) (1 2 3 4)) 
