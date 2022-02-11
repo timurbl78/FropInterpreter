@@ -85,7 +85,7 @@ public class Span {
 
 ## Syntax Analyzer
 
-<img width="443" alt="image" src="https://user-images.githubusercontent.com/69860125/153606722-1bc5718e-87d2-4904-88e0-6fa6f21c623d.png">
+<img width="1019" alt="image" src="https://user-images.githubusercontent.com/69860125/153608542-1cb55641-20ce-4723-9a5b-ec53ce91e023.png">
 
 For automated parser generation we used Bison.
 
