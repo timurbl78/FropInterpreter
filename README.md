@@ -8,7 +8,7 @@ We decided to choose Java for writing an interpreter. Also, we are using Bison f
 
 A language interpreter has two parts:  <br />
 **Parsing:** This component takes an input program as a sequence of characters, verifies it according to the language syntactic rules, and translates the program into an internal representation (a tree structure often called an abstract syntax tree) that shows the nested structure of statements or expressions in the program.  <br />
-We separated parsing into two parts: **lexical analysis**, in which the input character string is broken up into a sequence of tokens, and **syntactic analysis**, in which the tokens are assembled into an abstract syntax tree.  <br />
+We separated parsing into two parts: _lexical analysis_, in which the input character string is broken up into a sequence of tokens, and _syntactic analysis_, in which the tokens are assembled into an abstract syntax tree.  <br />
 **Execution:** The internal representation is then processed according to the semantic rules of the language, thereby carrying out the interpretation.  <br />
 
 **Our Work Process Stages:**
@@ -23,3 +23,21 @@ We separated parsing into two parts: **lexical analysis**, in which the input ch
 **Token representation:** structure with a set of attributes.  <br />
 **Interaction with other compiler components:** lexical analyzer passes the current token “on demand”.  <br />
 
+Our tokens:
+```
+public enum Tokens {
+    DELIMETER,
+
+    FUNCTION,
+
+    IDENTIFIER,
+
+    SPECIAL_FORM,
+
+    LIST_BRACKET,
+
+    LITERAL,
+
+    INVALID,
+}
+```
