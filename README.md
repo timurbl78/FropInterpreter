@@ -10,23 +10,23 @@ There are three kinds of entities defined in the language.
 
 * Literals 
 
-Literals are just values that are written explicitly. There are integer, real and boolean literals. 
+  Literals are just values that are written explicitly. There are integer, real and boolean literals. 
 
 * Atoms
 
-Atoms represent variables which can have values (a value of a literal, or a list). 
+  Atoms represent variables which can have values (a value of a literal, or a list). 
 
 * Lists
 
-List is a sequence of elements separated by whitespaces and enclosed by parentheses. Some lists have a special meaning. If a list starts with a keyword it is called special form.
+  List is a sequence of elements separated by whitespaces and enclosed by parentheses. Some lists have a special meaning. If a list starts with a keyword it is called special form.
 
 * The keywords of the special forms are:
 
-**_quote   setq   func   lambda   prog   cond   while   return  break_**
+  **_quote   setq   func   lambda   prog   cond   while   return  break_**
 
 * Special forms
 
-Special forms introduce language notions that have some predefined meaning. Each special form is actually a list where the very first element is a keyword. The rest of the special form can contain a number of Elements that are specific for each special form.
+  Special forms introduce language notions that have some predefined meaning. Each special form is actually a list where the very first element is a keyword. The rest of the special form can contain a number of Elements that are specific for each special form.
 
 ## Program Execution
 
@@ -34,4 +34,4 @@ The program execution starts from its very first element. Each element is evalua
 
 * Function
 
-The function just returns its argument without evaluating it. The meaning of the function is to prevent evaluating its argument. Using the single quote sign in front of an element is actually the short form of the function.
+  The function just returns its argument without evaluating it. The meaning of the function is to prevent evaluating its argument. Using the single quote sign in front of an element is actually the short form of the function.
