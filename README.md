@@ -41,3 +41,44 @@ public enum Tokens {
     INVALID,
 }
 ```
+```
+public class Span {
+    private int lineNum;
+    private int posBegin, posEnd;
+
+    public Span(int lineNum, int posBegin, int posEnd) {
+        this.lineNum = lineNum;
+        this.posBegin = posBegin;
+        this.posEnd = posEnd;
+    }
+
+    public int getLineNum() {
+        return lineNum;
+    }
+
+    public void setLineNum(int lineNum) {
+        this.lineNum = lineNum;
+    }
+
+    public int getPosBegin() {
+        return posBegin;
+    }
+
+    public void setPosBegin(int posBegin) {
+        this.posBegin = posBegin;
+    }
+
+    public int getPosEnd() {
+        return posEnd;
+    }
+
+    public void setPosEnd(int posEnd) {
+        this.posEnd = posEnd;
+    }
+}
+```
+
+The result of the Lexical analysis:
+<img width="339" alt="image" src="https://user-images.githubusercontent.com/69860125/153572931-6962a017-da9b-430d-9941-2446d8bb6508.png">
+
+
