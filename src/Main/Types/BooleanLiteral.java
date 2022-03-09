@@ -21,6 +21,10 @@ public class BooleanLiteral extends Literal {
         return bool.equals("true");
     }
 
+    public boolean getValue() {
+        return this.value;
+    }
+
     public void setValue(boolean value) {
         this.value = value;
     }

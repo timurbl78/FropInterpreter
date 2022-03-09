@@ -20,6 +20,10 @@ public class Identifier implements Element {
         this.subToken = SubTokens.TOK_IDENTIFIER;
     }
 
+    public String getValue() {
+        return this.value;
+    }
+
     @Override
     public String toString() {
         return String.format("{\"Identifier\": \"%s\"}",

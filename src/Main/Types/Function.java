@@ -1,9 +1,18 @@
 package Main.Types;
 
-import Main.Element.SubTokens.SubTokens;
+import Main.Element.Element;
 
-public class Function extends Identifier {
-    public Function(String value, SubTokens subToken) {
-        super(value, subToken);
+import java.util.List;
+
+public class Function extends LambdaSpecialForm {
+    private final Identifier name;
+
+    public Function(Identifier name, List<Identifier> args, Element el) {
+        super(args, el);
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name.getValue();
     }
 }

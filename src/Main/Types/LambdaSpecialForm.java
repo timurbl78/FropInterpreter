@@ -16,6 +16,14 @@ public class LambdaSpecialForm extends SpecialForm {
         this.el = el;
     }
 
+    public List<Identifier> getArgs() {
+        return this.args;
+    }
+
+    public Element getEl() {
+        return this.el;
+    }
+
     @Override
     public String toString() {
         return String.format("{\"Lambda\": {\"Args\": %s, \"Element\": %s}}",
