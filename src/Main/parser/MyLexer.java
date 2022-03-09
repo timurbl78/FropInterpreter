@@ -18,9 +18,9 @@ import Main.Types.*;
 class MyLexer implements Main.parser.Parser.Lexer {
     private final Pattern INTEGER_PATTERN = Pattern.compile("[+\\-]?[0-9]+");
     private final Pattern REAL_PATTERN = Pattern.compile("[+\\-]?[0-9]*\\.[0-9]+");
-    private final Pattern IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z][a-zA-Z0-9]*");
-    private final Pattern BOOLEAN_PATTERN = Pattern.compile("(true|false)");
+    private final Pattern BOOLEAN_PATTERN = Pattern.compile("(true|false)");;
     private final Pattern NULL_PATTERN = Pattern.compile("null");
+    private final Pattern IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z][a-zA-Z0-9]*");
 
     private final HashMap<String, Integer> SPECIAL_FORMS_TO_TOKENS = new HashMap<>() {{
         put("quote", TOK_QUOTE);
@@ -34,7 +34,6 @@ class MyLexer implements Main.parser.Parser.Lexer {
         put("break", TOK_BREAK);
     }};
 
-
     StreamTokenizer st;
     PositionReader reader;
   
@@ -45,8 +44,7 @@ class MyLexer implements Main.parser.Parser.Lexer {
     private static final int QUOTE_CHARACTER = '\'';
     private static final int OPEN_BRACKET_CHARACTER = '(';
     private static final int CLOSE_BRACKET_CHARACTER = ')';
-    
-  
+
     public MyLexer(String pathToFile) throws FileNotFoundException {
         File file = new File(pathToFile);
         InputStream is = new FileInputStream(file);
