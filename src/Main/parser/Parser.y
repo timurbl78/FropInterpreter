@@ -23,6 +23,7 @@ import Main.Position.Position;
 
 %code {
   private static ElementsList ast;
+  public static List<Integer> lines;
 
   public static ElementsList buildAST(String pathToFile) throws IOException {
     MyLexer lexer = new MyLexer(pathToFile);
@@ -79,8 +80,8 @@ import Main.Position.Position;
 
 %%
 program:
-	%empty                                             { ast = new ElementsList(); }
-	| program element                                  { ast.add($2); }
+	%empty                                             {ast = new ElementsList();lines = new ArrayList<Integer>();}
+	| program element                                  { ast.add($2); lines.add(@2.begin.line); }
 ;
 
 element:
@@ -113,8 +114,8 @@ list_elements:
 special_form:
 	TOK_QUOTE element                                  { $$ = new QuoteSpecialForm($2); }
 	| TOK_SETQ identifier element                      { $$ = new SetqSpecialForm($2, $3); }
-	| TOK_FUNC identifier list_of_ids element          { $$ = new FuncSpecialForm($2, $3, $4); }
-	| TOK_LAMBDA list_of_ids element                   { $$ = new LambdaSpecialForm($2, $3); }
+	| TOK_FUNC identifier list_of_ids element          { $$ = new FuncSpecialForm($2, $3, $4, @1.begin.line); }
+	| TOK_LAMBDA list_of_ids element                   { $$ = new LambdaSpecialForm($2, $3, @1.begin.line); }
 	| TOK_PROG list_of_ids element                     { $$ = new ProgSpecialForm($2, $3); }
 	| TOK_COND element element                         { $$ = new CondSpecialForm($2, $3); }
 	| TOK_COND element element element                 { $$ = new CondSpecialForm($2, $3, $4); }

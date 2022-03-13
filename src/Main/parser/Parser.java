@@ -561,189 +561,189 @@ public class Parser
       {
           case 2: /* program: %empty  */
   if (yyn == 2)
-    /* "parser.y":82  */
-                                                           { ast = new ElementsList(); };
+    /* "parser.y":83  */
+                                                           {ast = new ElementsList();lines = new ArrayList<Integer>();};
   break;
 
 
   case 3: /* program: program element  */
   if (yyn == 3)
-    /* "parser.y":83  */
-                                                           { ast.add(((Element)(yystack.valueAt (0)))); };
+    /* "parser.y":84  */
+                                                           { ast.add(((Element)(yystack.valueAt (0)))); lines.add(yystack.locationAt (0).begin.line); };
   break;
 
 
   case 4: /* element: identifier  */
   if (yyn == 4)
-    /* "parser.y":87  */
+    /* "parser.y":88  */
                                                            { yyval = ((Identifier)(yystack.valueAt (0))); };
   break;
 
 
   case 5: /* element: literal  */
   if (yyn == 5)
-    /* "parser.y":88  */
+    /* "parser.y":89  */
                                                            { yyval = ((Element)(yystack.valueAt (0))); };
   break;
 
 
   case 6: /* element: list  */
   if (yyn == 6)
-    /* "parser.y":89  */
+    /* "parser.y":90  */
                                                            { yyval = ((Element)(yystack.valueAt (0))); };
   break;
 
 
   case 7: /* element: "'" element  */
   if (yyn == 7)
-    /* "parser.y":90  */
+    /* "parser.y":91  */
                                                            { yyval = new QuoteSpecialForm(((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 9: /* literal: TOK_INTEGER_LITERAL  */
   if (yyn == 9)
-    /* "parser.y":98  */
+    /* "parser.y":99  */
                                                            { yyval = ((IntegerLiteral)(yystack.valueAt (0))); };
   break;
 
 
   case 10: /* literal: TOK_REAL_LITERAL  */
   if (yyn == 10)
-    /* "parser.y":99  */
+    /* "parser.y":100  */
                                                            { yyval = ((RealLiteral)(yystack.valueAt (0))); };
   break;
 
 
   case 11: /* literal: TOK_BOOLEAN_LITERAL  */
   if (yyn == 11)
-    /* "parser.y":100  */
+    /* "parser.y":101  */
                                                            { yyval = ((BooleanLiteral)(yystack.valueAt (0))); };
   break;
 
 
   case 12: /* literal: TOK_NULL_LITERAL  */
   if (yyn == 12)
-    /* "parser.y":101  */
+    /* "parser.y":102  */
                                                            { yyval = ((NullLiteral)(yystack.valueAt (0))); };
   break;
 
 
   case 13: /* list: "(" list_elements ")"  */
   if (yyn == 13)
-    /* "parser.y":104  */
+    /* "parser.y":105  */
                                                            { yyval = ((ElementsList)(yystack.valueAt (1))); };
   break;
 
 
   case 14: /* list: "(" special_form ")"  */
   if (yyn == 14)
-    /* "parser.y":105  */
+    /* "parser.y":106  */
                                                            { yyval = ((Element)(yystack.valueAt (1))); };
   break;
 
 
   case 15: /* list_elements: %empty  */
   if (yyn == 15)
-    /* "parser.y":109  */
+    /* "parser.y":110  */
                                                            { yyval = new ElementsList(); };
   break;
 
 
   case 16: /* list_elements: list_elements element  */
   if (yyn == 16)
-    /* "parser.y":110  */
+    /* "parser.y":111  */
                                                            { yyval = ((ElementsList)(yystack.valueAt (1))); ((ElementsList)(yystack.valueAt (1))).add(((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 17: /* special_form: TOK_QUOTE element  */
   if (yyn == 17)
-    /* "parser.y":114  */
+    /* "parser.y":115  */
                                                            { yyval = new QuoteSpecialForm(((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 18: /* special_form: TOK_SETQ identifier element  */
   if (yyn == 18)
-    /* "parser.y":115  */
+    /* "parser.y":116  */
                                                            { yyval = new SetqSpecialForm(((Identifier)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 19: /* special_form: TOK_FUNC identifier list_of_ids element  */
   if (yyn == 19)
-    /* "parser.y":116  */
-                                                           { yyval = new FuncSpecialForm(((Identifier)(yystack.valueAt (2))), ((LinkedList<Identifier>)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0)))); };
+    /* "parser.y":117  */
+                                                           { yyval = new FuncSpecialForm(((Identifier)(yystack.valueAt (2))), ((LinkedList<Identifier>)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0))), yystack.locationAt (3).begin.line); };
   break;
 
 
   case 20: /* special_form: TOK_LAMBDA list_of_ids element  */
   if (yyn == 20)
-    /* "parser.y":117  */
-                                                           { yyval = new LambdaSpecialForm(((LinkedList<Identifier>)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0)))); };
+    /* "parser.y":118  */
+                                                           { yyval = new LambdaSpecialForm(((LinkedList<Identifier>)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0))), yystack.locationAt (2).begin.line); };
   break;
 
 
   case 21: /* special_form: TOK_PROG list_of_ids element  */
   if (yyn == 21)
-    /* "parser.y":118  */
+    /* "parser.y":119  */
                                                            { yyval = new ProgSpecialForm(((LinkedList<Identifier>)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 22: /* special_form: TOK_COND element element  */
   if (yyn == 22)
-    /* "parser.y":119  */
+    /* "parser.y":120  */
                                                            { yyval = new CondSpecialForm(((Element)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 23: /* special_form: TOK_COND element element element  */
   if (yyn == 23)
-    /* "parser.y":120  */
+    /* "parser.y":121  */
                                                            { yyval = new CondSpecialForm(((Element)(yystack.valueAt (2))), ((Element)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 24: /* special_form: TOK_WHILE element element  */
   if (yyn == 24)
-    /* "parser.y":121  */
+    /* "parser.y":122  */
                                                            { yyval = new WhileSpecialForm(((Element)(yystack.valueAt (1))), ((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 25: /* special_form: TOK_RETURN element  */
   if (yyn == 25)
-    /* "parser.y":122  */
+    /* "parser.y":123  */
                                                            { yyval = new ReturnSpecialForm(((Element)(yystack.valueAt (0)))); };
   break;
 
 
   case 26: /* special_form: TOK_BREAK  */
   if (yyn == 26)
-    /* "parser.y":123  */
+    /* "parser.y":124  */
                                                            { yyval = new BreakSpecialForm(); };
   break;
 
 
   case 27: /* list_of_ids: "(" ids_sequence ")"  */
   if (yyn == 27)
-    /* "parser.y":127  */
+    /* "parser.y":128  */
                                                          { yyval = ((LinkedList<Identifier>)(yystack.valueAt (1))); };
   break;
 
 
   case 28: /* ids_sequence: %empty  */
   if (yyn == 28)
-    /* "parser.y":131  */
+    /* "parser.y":132  */
                                                            { yyval = new LinkedList<Identifier>(); };
   break;
 
 
   case 29: /* ids_sequence: ids_sequence identifier  */
   if (yyn == 29)
-    /* "parser.y":132  */
+    /* "parser.y":133  */
                                                          { yyval = ((LinkedList<Identifier>)(yystack.valueAt (1))); ((LinkedList<Identifier>)(yystack.valueAt (1))).add(((Identifier)(yystack.valueAt (0)))); };
   break;
 
@@ -1323,9 +1323,9 @@ private static final byte[] yycheck_ = yycheck_init();
   {
     return new short[]
     {
-       0,    82,    82,    83,    87,    88,    89,    90,    94,    98,
-      99,   100,   101,   104,   105,   109,   110,   114,   115,   116,
-     117,   118,   119,   120,   121,   122,   123,   127,   131,   132
+       0,    83,    83,    84,    88,    89,    90,    91,    95,    99,
+     100,   101,   102,   105,   106,   110,   111,   115,   116,   117,
+     118,   119,   120,   121,   122,   123,   124,   128,   132,   133
     };
   }
 
@@ -1409,6 +1409,7 @@ private static final byte[] yycheck_ = yycheck_init();
 /* "parser.y":24  */
 
   private static ElementsList ast;
+  public static List<Integer> lines;
 
   public static ElementsList buildAST(String pathToFile) throws IOException {
     MyLexer lexer = new MyLexer(pathToFile);
@@ -1430,7 +1431,7 @@ private static final byte[] yycheck_ = yycheck_init();
     return ast;
   }
 
-/* "parser.java":1434  */
+/* "parser.java":1435  */
 
 }
-/* "parser.y":134  */
+/* "parser.y":135  */
