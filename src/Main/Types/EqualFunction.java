@@ -5,7 +5,7 @@ import Main.Element.SubTokens.SubTokens;
 
 import java.util.List;
 
-public class EqualFunction extends Function {
+public class EqualFunction extends FuncSpecialForm implements Builtin {
     private final Element el1;
     private final Element el2;
 

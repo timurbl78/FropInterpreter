@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class IsrealFunction extends Function {
+public class IsrealFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public IsrealFunction() {

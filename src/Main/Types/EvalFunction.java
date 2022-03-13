@@ -5,7 +5,7 @@ import Main.Element.SubTokens.SubTokens;
 
 import java.util.List;
 
-public class EvalFunction extends Function {
+public class EvalFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public EvalFunction() {

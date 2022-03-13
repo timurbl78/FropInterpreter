@@ -8,7 +8,7 @@ public class Identifier implements Element {
     public Tokens token = Tokens.IDENTIFIER;
     public SubTokens subToken;
 
-    private String value;
+    public String value;
 
     public Identifier(String value, SubTokens subToken) {
         this.value = value;
@@ -20,9 +20,7 @@ public class Identifier implements Element {
         this.subToken = SubTokens.TOK_IDENTIFIER;
     }
 
-    public String getValue() {
-        return this.value;
-    }
+
 
     @Override
     public String toString() {

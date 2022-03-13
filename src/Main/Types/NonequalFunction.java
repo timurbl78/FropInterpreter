@@ -5,7 +5,7 @@ import Main.Element.SubTokens.SubTokens;
 
 import java.util.List;
 
-public class NonequalFunction extends Function {
+public class NonequalFunction extends FuncSpecialForm implements Builtin {
     private final Element el1;
     private final Element el2;
 

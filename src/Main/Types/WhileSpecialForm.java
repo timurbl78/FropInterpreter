@@ -4,8 +4,8 @@ import Main.Element.Element;
 import Main.Element.SubTokens.SubTokens;
 
 public class WhileSpecialForm extends SpecialForm {
-    private final Element el1;
-    private final Element el2;
+    public final Element el1;
+    public final Element el2;
 
     public WhileSpecialForm(Element el1, Element el2) {
         super("while", SubTokens.TOK_WHILE);

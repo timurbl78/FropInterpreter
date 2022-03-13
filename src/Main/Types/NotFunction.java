@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class NotFunction extends Function {
+public class NotFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public NotFunction() {

@@ -5,7 +5,7 @@ import Main.Element.SubTokens.SubTokens;
 
 import java.util.List;
 
-public class TailFunction extends Function {
+public class TailFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public TailFunction() {

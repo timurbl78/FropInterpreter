@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class PlusFunction extends Function {
+public class PlusFunction extends FuncSpecialForm implements Builtin {
     private final Element el1;
     private final Element el2;
 

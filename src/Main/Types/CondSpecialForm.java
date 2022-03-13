@@ -5,9 +5,9 @@ import Main.Element.SubTokens.SubTokens;
 import Main.Element.Tokens.Tokens;
 
 public class CondSpecialForm extends SpecialForm {
-    private final Element el1;
-    private final Element el2;
-    private final Element el3;
+    public final Element el1;
+    public final Element el2;
+    public final Element el3;
 
     public CondSpecialForm(Element el1, Element el2) {
         super("cond", SubTokens.TOK_COND);

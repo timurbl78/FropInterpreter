@@ -4,8 +4,8 @@ import Main.Element.Element;
 import Main.Element.SubTokens.SubTokens;
 
 public class SetqSpecialForm extends SpecialForm {
-    private final Identifier id;
-    private final Element el;
+    public final Identifier id;
+    public final Element el;
 
     public SetqSpecialForm(Identifier id, Element el) {
         super("setq", SubTokens.TOK_SETQ);

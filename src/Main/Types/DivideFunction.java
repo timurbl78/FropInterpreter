@@ -4,13 +4,13 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class DivideFunction extends Function {
+public class DivideFunction extends FuncSpecialForm implements Builtin {
     private final Element el1;
     private final Element el2;
 
     public DivideFunction() {
         super(
-                new Identifier("times"),
+                new Identifier("divide"),
                 List.of(new Identifier("el1"), new Identifier("el2")),
                 new ElementsList()
         );

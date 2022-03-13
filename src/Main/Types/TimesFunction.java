@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class TimesFunction extends Function {
+public class TimesFunction extends FuncSpecialForm implements Builtin {
     private final Element el1;
     private final Element el2;
 

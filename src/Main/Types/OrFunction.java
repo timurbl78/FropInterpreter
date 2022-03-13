@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class OrFunction extends Function {
+public class OrFunction extends FuncSpecialForm implements Builtin {
     private final Element el1;
     private final Element el2;
 

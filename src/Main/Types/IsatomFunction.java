@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class IsatomFunction extends Function {
+public class IsatomFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public IsatomFunction() {

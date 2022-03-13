@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class IsboolFunction extends Function {
+public class IsboolFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public IsboolFunction() {

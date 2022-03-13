@@ -4,7 +4,7 @@ import Main.Element.Element;
 
 import java.util.List;
 
-public class IslistFunction extends Function {
+public class IslistFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public IslistFunction() {

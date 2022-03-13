@@ -12,6 +12,10 @@ public class QuoteSpecialForm extends SpecialForm {
         this.el = el;
     }
 
+    public Element getValue() {
+        return this.el;
+    }
+
     @Override
     public String toString() {
         return String.format("{\"Quote\": {\"Element\": %s}}", this.el);

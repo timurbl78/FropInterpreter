@@ -5,7 +5,7 @@ import Main.Element.SubTokens.SubTokens;
 
 import java.util.List;
 
-public class HeadFunction extends Function {
+public class HeadFunction extends FuncSpecialForm implements Builtin {
     private final Element el;
 
     public HeadFunction() {
@@ -35,8 +35,12 @@ public class HeadFunction extends Function {
 
         Element a = list.get(0);
 
-        if (a instanceof ElementsList ) {
-            return ((ElementsList) a).getFirst();
+        if (a instanceof ElementsList l) {
+            if (l.size() > 0) {
+                return l.getFirst();
+            } else {
+                return new NullLiteral();
+            }
         } else {
             throw new Error("Incorrect types");
         }
