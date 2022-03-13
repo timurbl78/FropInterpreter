@@ -1,6 +1,6 @@
-(func map (f l) (lambda (f l)
+(func map (f l)
   (cond 
-    (isnull l) (quote ())
-    (cons (f (car l)) (map f (cdr l))))))
+    (isnull (head l)) (quote ())
+    (cons (f (head l)) (map f (tail l)))))
 
 (map (lambda (n) (times n n)) (1 2 3 4)) 

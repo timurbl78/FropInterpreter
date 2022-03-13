@@ -1,6 +1,6 @@
-(func range (a b) (lambda (a b) 
+(func range (a b)
   (cond 
     (equal a b) (quote ()) 
-    (cons a (range (plus a 1) b)))))
+    (cons a (range (plus a 1) b))))
 
 (range 0 10)
