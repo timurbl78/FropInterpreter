@@ -23,14 +23,14 @@ The program execution starts from its very first element. Each element is evalua
 
 Special forms introduce language notions that have some predefined meaning. Each special form is actually a list where the very first element is a keyword. The rest of the special form can contain a number of Elements that are specific for each special form.
 
-* ( setq Atom Element ) <br />
+* `( setq Atom Element )` <br />
   Performs assignment a value to an atom. The second parameter gets evaluated, and the evaluated value becomes the new value of the atom from the fist parameter replacing its previous value. If there was not an atom with the given name in the current context then it is created and added to the context. 
 
   (setq x 5) <br />
   (setq y (plus 1 2)) // atom y gets the value of 3 <br />
   (setq z null)
 
-* ( quote Element ) <br />
+* `( quote Element )` <br />
   'Element <br />
   The function just returns its argument without evaluating it. Single quote sign in front of an element is the short form of the function.
 
@@ -38,7 +38,7 @@ Special forms introduce language notions that have some predefined meaning. Each
   x // the value of 3 <br />
   'x // the atom x itself 
   
-* ( func Atom List Element ) <br />
+* `( func Atom List Element )` <br />
   Introduces a new user-defined function. The first argument - the name of the function, the second contains the function parameters, the third is the body of the function. <br />
   Each user-defined function introduces its own local context: atoms representing parameters are local to the function. They disappear after exiting from the function. <br />
   Only three special forms introduce local contexts: func, lambda, and prog.
@@ -46,7 +46,7 @@ Special forms introduce language notions that have some predefined meaning. Each
   (func Cube (arg) (times (times arg arg) arg)) <br />
   (func Trivial () 1) <br />
   
-* ( lambda List Element ) <br />
+* `( lambda List Element )` <br />
   Introduces a new user-defined unnamed function. The first argument contains the function parameters, the second is the body of the function. <br /> 
   The unnamed function can further be called by that name of an atom that gets it as the value, or directly.
 
@@ -54,19 +54,19 @@ Special forms introduce language notions that have some predefined meaning. Each
   (setq myFunc (lambda (p) (cond (less p 0) plus minus))) <br /> 
   ((myFunc -1) 1 2) // returns 3
   
-* ( prog List Element ) <br /> 
+* `( prog List Element )` <br /> 
   Introduces a sequence of elements that are to be evaluated sequentially. The first parameter is the list of atoms that represent the local context of the form. The second argument contains elements that are to be evaluated sequentially. 
 
-* ( cond Element1 Element2 [ Element3 ] ) <br /> 
+* `( cond Element1 Element2 [ Element3 ] )` <br /> 
   Conditional evaluation. It contains two or three arguments. The evaluation of the form starts from evaluating its first argument. The result of the evaluation should be of type boolean. If the result is true the second argument is evaluated, and the result becomes the result of the whole form. Otherwise, the third argument is evaluated and the result becomes the result of the whole form. If the result of the first argument is false and there is no third argument in the form, the result of the whole form is null.
   
-* ( while Element Element ) <br /> 
+* `( while Element Element )` <br /> 
   The form specifies repetitions. If the result of the first argument is true then the second argument is evaluated, and the control goes back for evaluating of the first argument again. In other words, the first argument is evaluated before each iteration. If the result is false then the evaluation of the form finishes. The result of the form is always null.
   
-* ( return Element ) <br /> 
+* `( return Element )` <br /> 
   It evaluates its argument and interrupts the execution of the nearest enclosing form with the context. If there is no such enclosing form then the whole program terminates.
   
-* ( break ) <br /> 
+* `( break )` <br /> 
   The form makes sense within a while form. It unconditionally interrupts the execution of the nearest while form. If there is no such enclosing form then the whole program terminates.
   
 ## Predefined functions
@@ -81,7 +81,7 @@ whole program stops execution.
 4. After completing the function’s actions, a value is returned to the calling function. 
 
 ### Arithmetic functions
-* ( plus Element Element)
+* ( plus Element Element )
 * ( minus Element Element )
 * ( times Element Element )
 * ( divide Element Element )
@@ -138,3 +138,7 @@ Letter : Any Unicode character that represents a letter <br />
 Integer : DecimalDigit { DecimalDigit } <br />
 DecimalDigit : 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 Real : Integer . Integer <br />
 Boolean : true | false 
+
+## Some clarifications
+Note that unlike some other languages of Lisp family, F doesn't provide NIL symbol, hence, there is no such command as "isempty" to check the list. In order to do so, one should type "(isnull (head lst))" where lst is a name of the file.
+Comments are denoted as "#" and everything after tht symbol till the end of line is ignored.
