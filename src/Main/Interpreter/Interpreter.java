@@ -60,9 +60,6 @@ public class Interpreter {
             scope.defineLookup(setq.id.value, calc(setq.el, scope));
         } else if (el instanceof FuncSpecialForm func) {
             scope.define(func);
-        } else if (el instanceof ProgSpecialForm prog) {
-            // TODO: implement
-            return prog;
         } else if (el instanceof CondSpecialForm cond) {
             Element boolResult = calc(cond.el1, scope);
             if (boolResult instanceof BooleanLiteral) {
