@@ -2,7 +2,6 @@ package Main.Types;
 
 import Main.Element.Element;
 import Main.Element.SubTokens.SubTokens;
-import Main.Element.Tokens.Tokens;
 
 public class CondSpecialForm extends SpecialForm {
     public final Element el1;

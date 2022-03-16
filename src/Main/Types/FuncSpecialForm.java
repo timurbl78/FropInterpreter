@@ -3,7 +3,6 @@ package Main.Types;
 import java.util.List;
 
 import Main.Element.Element;
-import Main.Element.SubTokens.SubTokens;
 
 public class FuncSpecialForm extends LambdaSpecialForm {
     private final Identifier name;

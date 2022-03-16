@@ -4,11 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import Main.Element.Element;
-import Main.Element.SubTokens.SubTokens;
-import Main.Element.Tokens.Tokens;
+
 
 public class ElementsList extends LinkedList<Element> implements Element {
-    // TODO: token
 
     public ElementsList() {
         super();
